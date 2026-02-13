@@ -1,0 +1,100 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:909558560739548179",
+      "lastPropertyId": "4:1107173563999382608",
+      "name": "LocalProperty",
+      "properties": [
+        {
+          "id": "1:3084175187886749319",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:9043796629093101626",
+          "name": "key",
+          "type": 9
+        },
+        {
+          "id": "3:5912773633303222228",
+          "name": "value",
+          "type": 9
+        },
+        {
+          "id": "4:1107173563999382608",
+          "name": "valueType",
+          "type": 5
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:888429007804573710",
+      "lastPropertyId": "4:6704386426937368888",
+      "name": "ControllerRequest",
+      "properties": [
+        {
+          "id": "1:6337150257188780651",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1769476361916595648",
+          "name": "date",
+          "type": 10
+        },
+        {
+          "id": "3:3757422173269154929",
+          "name": "data",
+          "type": 9
+        },
+        {
+          "id": "4:6704386426937368888",
+          "name": "synchronizedAt",
+          "type": 10
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:4198449396619127879",
+      "lastPropertyId": "3:493020342324541316",
+      "name": "CameraCapture",
+      "properties": [
+        {
+          "id": "1:6791694753474249001",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1611234541499945044",
+          "name": "date",
+          "type": 10
+        },
+        {
+          "id": "3:493020342324541316",
+          "name": "filePath",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:4198449396619127879",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

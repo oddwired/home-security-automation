@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity"
+    android:padding="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:textAlignment="center"
+                    android:text="Last Update: "/>
+
+                <TextView
+                    android:id="@+id/lastUpdate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"
+                android:text="Door Status: "/>
+
+            <TextView
+                android:id="@+id/doorStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"
+                android:text="Door Lock Status: "/>
+
+            <TextView
+                android:id="@+id/doorLockStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"
+                android:text="DC Power Status: "/>
+
+            <TextView
+                android:id="@+id/dcPowerStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/alarmStatusView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"
+                android:textColor="@color/blue_600"
+                android:text="Alarm Status: "/>
+
+            <TextView
+                android:id="@+id/alarmStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"
+                android:text="Alarm Enabled: "/>
+
+            <TextView
+                android:id="@+id/alarmEnabled"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"
+                android:text="Lock Pad Status: "/>
+
+            <TextView
+                android:id="@+id/lockPadStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"
+                android:text="Battery Level: "/>
+
+            <TextView
+                android:id="@+id/batteryLevel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/testCommand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unlock Door"/>
+
+        <Button
+            android:id="@+id/lockDoor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lock Door"/>
+
+        <Button
+            android:id="@+id/powerDC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turn On Door Controller"/>
+
+        <Button
+            android:id="@+id/powerOffDC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turn Off Door Controller"/>
+
+        <Button
+            android:id="@+id/alarmOn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turn On Alarm"/>
+
+        <Button
+            android:id="@+id/alarmOff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turn Off Alarm"/>
+
+        <Button
+            android:id="@+id/enableAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable Alarm"/>
+
+        <Button
+            android:id="@+id/disableAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disable Alarm"/>
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Controller"/>
+
+        <Button
+            android:id="@+id/btnResetCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Camera"/>
+
+        <Button
+            android:id="@+id/btnTurnOffCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turn off Camera"/>
+
+        <Button
+            android:id="@+id/btnCapture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Camera Capture"/>
+
+        <Button
+            android:id="@+id/btnStartCctvView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Camera Captures"/>
+
+        <Button
+            android:id="@+id/btnViewMessages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Messages"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
