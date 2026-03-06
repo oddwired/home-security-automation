@@ -2,7 +2,7 @@
 #include <WiFiEsp.h>
 #include <WiFiEspUdp.h>
 
-#define DEBUG true
+#define DEBUG false
 
 const int BAUD_RATE = 19200;
 
@@ -66,7 +66,7 @@ int alarm_turn_off_timeout = 2;
 int dc_power_state = LOW;
 int alarm_state = LOW;
 int door_light_state = LOW;
-int alarm_armed_state = HIGH;
+int alarm_armed_state = LOW;
 
 // Reset function
 void(* controllerReset) (void) = 0;
@@ -106,18 +106,33 @@ void setup() {
 
 void loop() {
 
-    // Listen for emergency commands
-    udpListen();
+    // Wifi module not initialized, enable physical control
+    wifi_status = WiFi.status();
+    if(wifi_status == WL_NO_SHIELD){
+      dc_power_state = 1;
+
+      log("No Wifi shield");
+    }else if(wifi_status != WL_CONNECTED){
+      /* We can try reconnecting, but enable physical buttons in case it fails 
+      * DC power will remain on until the next reset or config update
+      */
+      dc_power_state = 1;
+      connectWifi();
+    }else{
+      // Listen for emergency commands
+      udpListen();
+
+      // Do not send data if Wifi module is not initialized. Module will be initialized during the next reset
+      if ((millis() - last_sent_millis) >= (data_send_interval * 1000)) {
+        sendData();
+
+        last_sent_millis = millis();
+      }
+    }
 
     if(alarm_armed_state){
       checkDoorPad();
      }
-
-    if ((millis() - last_sent_millis) >= (data_send_interval * 1000)) {
-        sendData();
-
-        last_sent_millis = millis();
-    }
 
     // Reset before the next loop if reset interval has been reached
     if(millis() >= (reset_interval * 1000)){
@@ -340,6 +355,8 @@ void turnOffDoorControllerPower() {
 
 /* Turn on power to door controller */
 bool turnOnDoorControllerPower() {
+
+    log("Turn on Door control power");
 
     int tries = 0;
     while (!getDCState()) {
